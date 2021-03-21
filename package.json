@@ -1,0 +1,27 @@
+{
+  "name": "Team-building-generator",
+  "version": "1.0.0",
+  "description": "building a Employee databased",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ScottLRay/Team-building-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ScottLRay/Team-building-generator/issues"
+  },
+  "homepage": "https://github.com/ScottLRay/Team-building-generator#readme"
+}
