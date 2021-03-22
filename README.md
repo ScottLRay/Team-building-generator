@@ -8,7 +8,16 @@ building a Employee databased
 * Inquirer
 
 
+## Install
+to install jest
+```
+npm install --save-dev jest
+```
 
+to install inquirer
+```
+npm install inquirer
+```
 
 ## User Story
 
