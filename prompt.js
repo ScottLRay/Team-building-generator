@@ -1,3 +1,9 @@
+const inquirer = require("inquirer");
+
+const Engineer = require("./lib/Engineer.js");
+const Intern = require("./lib/Intern.js");
+const Manager = require("./lib/Manager.js");
+
 const team = [];
 
 function managerData() {
@@ -105,5 +111,7 @@ function employeeData() {
       }
     });
 }
+
+managerData()
 
 module.exports = Prompts;
