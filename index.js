@@ -7,9 +7,10 @@ const Manager = require("./lib/Manager.js");
 const renderPage = require("./renderPage.js");
 
 const team = [];
-const teamTitle;
+// let teamTitle = "";
 
-const managerData = 
+
+function managerData(){ 
   inquirer
     .prompt([
       {
@@ -46,12 +47,12 @@ const managerData =
         managerAnswers.officeNumber
       );
       team.push(manager);
-      teamTitle = managerAnswers.teamTitle;
+      // teamTitle = managerAnswers.teamTitle;
       console.log("Now we will ask for employee information.");
-      // console.log(team);
+      console.log(team);
       askData()
     });
-
+  }
 
 function internData() {
   inquirer
@@ -59,17 +60,17 @@ function internData() {
       {
         type: "input",
         message: "name of the employee?",
-        name: "employeeName",
+        name: "internName",
       },
       {
         type: "input",
         message: "What is the employee ID?",
-        name: "employeeID",
+        name: "internID",
       },
       {
         type: "input",
         message: "What is the employee email?",
-        name: "employeeEmail",
+        name: "internEmail",
       },
       {
         type: "input",
@@ -83,14 +84,20 @@ function internData() {
       },
     ])
     .then((answers) => {
-      if (answers.employeeRole === "Intern") {
+     
         const intern = new Intern(
-          answers.employeeName,
-          answers.employeeId,
-          answers.employeeEmail,
+          answers.internName,
+          answers.internID,
+          answers.internEmail,
           answers.school
         );
         team.push(intern);
+        console.log(team);
+      
+      if (answers.newEmployee === true){
+        askData()
+      }else {
+        createPage();
       }
     });
 }
@@ -101,33 +108,43 @@ function engineerData() {
       {
         type: "input",
         message: "name of the employee?",
-        name: "employeeName",
+        name: "engineerName",
       },
       {
         type: "input",
         message: "What is the employee ID?",
-        name: "employeeID",
+        name: "engineerID",
       },
       {
         type: "input",
         message: "What is the employee email?",
-        name: "employeeEmail",
+        name: "engineerEmail",
       },
       {
         type: "input",
         message: "what is the Engineer github?",
         name: "github",
       },
+      {
+        type: "confirm",
+        name: "newEmployee",
+        message: "Would you like to add another team member?",
+      },
     ])
     .then((answers) => {
-      if (answers.employeeRole === "Engineer") {
+      console.log("engineer anwers: ", answers)
         const engineer = new Engineer(
-          answers.employeename,
-          answers.employeeId,
-          answers.employeeEmail,
+          answers.engineerName,
+          answers.engineerID,
+          answers.engineerEmail,
           answers.github
         );
         team.push(engineer);
+        console.log(team);
+      if (answers.newEmployee === true){
+        askData()
+      }else {
+        createPage();
       }
     });
 }
@@ -137,19 +154,17 @@ const menu = [
     type: "list",
     message: "Menu",
     name: "menu",
-    choices: ["add intern", "add engineer", "finish building team"],
+    choices: ["add intern", "add engineer"],
   },
 ];
 
 function askData() {
-  prompt(menu).then((data) => {
+  inquirer.prompt(menu).then((data) => {
     if (data.menu === "add engineer") {
       engineerData();
     } else if (data.menu === "add intern") {
       internData();
-    } else {
-      createPage();
-    }
+    } 
   });
 }
 
@@ -158,7 +173,7 @@ function createPage() {
 }
 
 function init() {
-  inquirer.prompt(managerData);
+  managerData();
 }
 
 init();
