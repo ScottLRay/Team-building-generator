@@ -24,7 +24,7 @@ describe("Engineer", () => {
     });
     test("Can set github attribute with constructor", () => {
         const github = "tbeauchamp";
-        const e = new Engineer("Nick", 77, github);
+        const e = new Engineer("Nick", 77, "tbeauchamp@gmail.com", github);
         expect(e.github).toBe(github);
       });
 
@@ -51,7 +51,7 @@ describe("Engineer", () => {
     });
     test("Can get role via getGithub() method", () => {
         const github = "tbeauchamp"
-        const e = new Engineer("Nick", 77, "tbeauchamp");
+        const e = new Engineer("Nick", 77,"tbeauchamp@gmail.com",  github);
         expect(e.getGithub()).toBe(github);
       });
 

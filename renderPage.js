@@ -19,8 +19,7 @@ function renderPage(team) {
         </div>`;
     }
     if (team[i].role === "Engineer") {
-      employees += `
-        <div class="card employee-card">
+       `<div class="card employee-card">
             <div class="card-header">
                 <h2 class="card-title">${team[i].name}</h2>
                 <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${team[i].role}</h3>
@@ -56,11 +55,11 @@ function renderPage(team) {
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>My Team</title>
+      <title>${teamTitle}</title>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
   </head>
   <body>
-      <h1 id = "teamName"></h1>
+      <h1 id = "teamName">${teamTitle}</h1>
   
       <div class="container">
           <!-- Content here -->

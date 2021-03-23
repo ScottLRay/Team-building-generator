@@ -7,10 +7,9 @@ const Manager = require("./lib/Manager.js");
 const renderPage = require("./renderPage.js");
 
 const team = [];
+const teamTitle;
 
-init();
-
-function managerData() {
+const managerData = 
   inquirer
     .prompt([
       {
@@ -49,9 +48,10 @@ function managerData() {
       team.push(manager);
       teamTitle = managerAnswers.teamTitle;
       console.log("Now we will ask for employee information.");
-      console.log(team);
+      // console.log(team);
+      askData()
     });
-}
+
 
 function internData() {
   inquirer
@@ -158,5 +158,7 @@ function createPage() {
 }
 
 function init() {
-  inquirer.prompt(managerData()).then(askData());
+  inquirer.prompt(managerData);
 }
+
+init();
