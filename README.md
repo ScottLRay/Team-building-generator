@@ -6,6 +6,7 @@ building a Employee databased
 * Html
 * CSS
 * Inquirer
+* jest
 
 
 ## Install
