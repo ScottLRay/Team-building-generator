@@ -49,7 +49,7 @@ function managerData(){
       team.push(manager);
       // teamTitle = managerAnswers.teamTitle;
       console.log("Now we will ask for employee information.");
-      console.log(team);
+      // console.log(team);
       askData()
     });
   }
@@ -92,7 +92,7 @@ function internData() {
           answers.school
         );
         team.push(intern);
-        console.log(team);
+        // console.log(team);
       
       if (answers.newEmployee === true){
         askData()
@@ -132,7 +132,6 @@ function engineerData() {
       },
     ])
     .then((answers) => {
-      console.log("engineer anwers: ", answers)
         const engineer = new Engineer(
           answers.engineerName,
           answers.engineerID,
@@ -140,7 +139,7 @@ function engineerData() {
           answers.github
         );
         team.push(engineer);
-        console.log(team);
+        // console.log(team);
       if (answers.newEmployee === true){
         askData()
       }else {
