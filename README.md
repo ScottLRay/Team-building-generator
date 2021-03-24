@@ -51,3 +51,4 @@ THEN I exit the application, and the HTML is generated
 
 ## ScreenShot
 ![screenshot of deploypage](img\team-generator-screenshot.png)
+![screenshot of deploypage](https://github.com/ScottLRay/Team-building-generator/blob/main/img/team-generator-screenshot.png)
